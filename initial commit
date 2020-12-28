@@ -2,6 +2,7 @@
 
 # include <iostream>
 # include <limits>
+# include <iomanip>
 using namespace std ;
 
 int main() {
@@ -12,24 +13,24 @@ int main() {
 	// declaration of variables
 
 	do {
-		if ( !cin ) {
-			cin.clear() ;
-			cin.ignore(numeric_limits<streamsize>::max(), '\n') ;
-  	}       
-  	cout << "Enter a number of rows (1-12): " ;
-  	cin >> rows ;
-  	// clears flags for rows input
-  } while (!cin || rows < 1 || rows > 12 ) ;
+		cout << "Enter a number of rows (1-12): " ;
+		cin >> rows ;
+		if ( !cin || rows < 1 || rows > 12 ) {
+			cout << "Error: Input is incorrect.\n\n" ;
+			// flags incorrect input
+		}
+	} while ( !cin || rows < 1 || rows > 12 ) ;
+	// asks for rows
 	
 	do {
-	if (!cin) {
-		cin.clear() ;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n') ;
-	}       
-	cout << "Enter a number of columns (1-12): " ;
-	cin >> cols ;
-	// clears flags for columns
+		cout << "Enter a number of columns (1-12): " ;
+		cin >> cols ;
+		if ( !cin || cols < 1 || cols > 12 ) {
+			cout << "Error: Input is incorrect.\n\n" ;
+			// flags incorrect input 
+		}
 	} while (!cin || cols < 1 || cols > 12 ) ;
+	// asks for columns
 	
 	while (true) { 
 		cout << "\n<table>\n" ;
