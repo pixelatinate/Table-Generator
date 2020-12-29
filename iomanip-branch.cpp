@@ -39,7 +39,7 @@ int main() {
 		for ( r = 1 ; r <= rows ; r++ ) {
 			cout << "<tr> " ; 
 			for (c = 1 ; c <= cols ; c++ ) {
-				cout << setw(6) << "<td>" << setw(3) << ( r * c ) << "</td> " << setw(6) ;
+				cout << setw(6) << "<td>" << setw(4) << ( r * c ) << "</td> " << setw(6) ;
 				// generates the table 
 			}       
 			cout << "</tr>" ;
